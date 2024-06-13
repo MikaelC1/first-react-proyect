@@ -6,7 +6,7 @@ export default function Content(){
         {    
             video: "120",  
             title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-            username: 'midudev', 
+            username: 'Marques Brownlee', 
             visits: '32 k', 
             time: '3 dias' },
         { 
@@ -33,7 +33,7 @@ export default function Content(){
     ]
 
     return (
-    <section id='section'>
+    <section id='section col-start-2 col-end-3 row-start-2 row-end-3'>
         <Categories />
         <section className="grid grid-cols-4 gap-[1rem] pt-5">
             {

@@ -1,4 +1,5 @@
 import Icon from "./Icon"
+import clsx from "clsx"
 
 
 // export default function Video(props){
@@ -41,11 +42,39 @@ import Icon from "./Icon"
 
 export default function Video({video,  title, username, visits, time}){
 
+    // const articleClassnames = 
+    // "video-card" + channel === "Marques Brownlee" ? " special" : ""
+
+    // let articleClassnames = ["video-card"]
+
+    // if(channel == "Marques Brownlee"){
+    //     articleClassnames.push('special')
+    // }
+
     return(
-            <article key={`menu${username}`} className="w-[350px] flex flex-col rounded overflow-hidden">
+        // <article className={}{articleClassnames.join}></article>
+        <article 
+            className={
+                clsx('video-card w-[350px] flex flex-col rounded overflow-hidden ', { 
+                    "border": username === "Marques Brownlee" }
+                    )}>
+
+             {/* <article className="w-[350px] flex flex-col rounded overflow-hidden"> */}
                 <img src={`https://picsum.photos/id/${video}/400/200`} alt="" className="w-full object-cover rounded-xl"/>
                 <footer className="grid grid-cols-[10%,1fr,10%] bg-transparent w-full py-2">
-                    <img src={`https://api.dicebear.com/8.x/identicon/svg?seed=${username}`} alt="user" className="w-6 justify-self-center place-self-start rounded-full" />
+                    {/* {
+                        channel && (
+                            <img src={`https://api.dicebear.com/8.x/identicon/svg?seed=${username}`} alt="user" className="w-6 justify-self-center place-self-start rounded-full" />
+                        )
+                    }
+                    {!channel && (<span>😵</span>)} */}
+                    {
+                        username ? (
+                            <img src={`https://api.dicebear.com/8.x/identicon/svg?seed=${username}`} alt="user" className="w-6 justify-self-center place-self-start rounded-full" />
+                        ) : (
+                            <span>😵</span>
+                        )
+                    } 
                     <div className="flex flex-col">
                         <h2 className="font-bold mb-1" >{title}</h2>
                         <span>{username}</span>
